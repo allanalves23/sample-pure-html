@@ -1,0 +1,22 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+    - master
+    - release/*
+    
+jobs:
+  my_job:
+    name: Deploy to LW
+    runs-on: ubuntu-18.04
+  
+    steps:
+    - name: studies-lwftp-testing
+      uses: allanalves23/ftp-action-studies@0.0.2
+      with:
+        host: ${{ secrets.HOST }}
+        user: ${{ secrets.USER }}
+        password: ${{ secrets.PASS }}
+        localDir: "."
+        remoteDir: "public_html"
