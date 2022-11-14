@@ -19,8 +19,8 @@ jobs:
     - name: studies-lwftp-testing
       uses: allanalves23/ftp-action-studies@0.0.2
       with:
-        host: "ftp.brqdomaintest1.hospedagemdesites.ws"
-        user: "brqdomaintest1"
-        password: "Pass123456789@"
+        host: ${{ secrets.HOST }}
+        user: ${{ secrets.USER }}
+        password: ${{ secrets.PASS }}
         localDir: "."
         remoteDir: "public_html"
