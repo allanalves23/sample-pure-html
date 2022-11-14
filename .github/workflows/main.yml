@@ -9,12 +9,11 @@ on:
 jobs:
   my_job:
     name: Deploy to LW
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-lastest
   
     steps:
-    - name: cd and ls
-      run: |
-        ls -a
+    - name: Download files from the current repository
+      uses: actions/checkout@v2
 
     - name: studies-lwftp-testing
       uses: allanalves23/ftp-action-studies@0.0.2
