@@ -15,8 +15,8 @@ jobs:
     - name: Download files from the current repository
       uses: actions/checkout@v2
 
-    - name: studies-lwftp-testing
-      uses: allanalves23/ftp-action-studies@0.0.2
+    - name: FTP Deploy Locaweb
+      uses: locaweb/ftp-deploy@1.0.0
       with:
         host: ${{ secrets.HOST }}
         user: ${{ secrets.USER }}
